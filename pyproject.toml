@@ -8,8 +8,34 @@ authors = ["Ilya Osipov <070809010@mail.ru>"]
 description = ""
 name = "django-orm-standalone-5"
 version = "0.1.0"
+
 [tool.poetry.dependencies]
 django = "^1.11.0"
 psycopg2-binary = "^2.8"
 python = "^3.7"
+
 [tool.poetry.dev-dependencies]
+black = "^20.8b1"
+isort = "^5.7.0"
+ipdb = "^0.13.4"
+
+[tool.black]
+line-length = 79
+target_version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.idea
+)
+'''
+
+[tool.isort]
+line_length = 119
+force_grid_wrap = 0
+multi_line_output = 3
+lines_between_types = 1
+use_parentheses = true
+include_trailing_comma = true
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
